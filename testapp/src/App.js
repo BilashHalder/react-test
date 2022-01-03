@@ -1,25 +1,26 @@
 
-import {useState,useEffect} from 'react';
-import DataSendParent from './components/DataSendParent';
-import PureComponentExample from './components/PureComponentExample';
+import {useState,useEffect,useRef} from 'react';
+import ApiExample from './components/ApiExample';
+import ApiPost from './components/ApiPost';
+
+
+
 function App() {
   const [flag,setFlag]=useState(true);
-  const[Cdata,setCdata]=useState('')
+  const[Cdata,setCdata]=useState('');
+  let pref=useRef()
   function callfromchild(cdata){
 console.log(cdata);
 setCdata(cdata);
 console.log('state data parent '+Cdata)
 
   }
-useEffect(()=>{
-  console.log('UseEffect '+Cdata);
-})
   return (
    <>
  <div className="container">
  <div className="row mt-5">
-<PureComponentExample></PureComponentExample>
  </div>
+
  </div>
    </>
   );
